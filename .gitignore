@@ -1,0 +1,22 @@
+# Local build tools, caches, and native output
+work/
+build/
+artifacts/
+.vs/
+**/bin/
+**/obj/
+**/__pycache__/
+*.pyc
+*.pdb
+*.tmp
+# Credentials and hosting identity are not part of the distributable project
+.env
+.env.*
+.openai/
+# Personal profiles and local editor storage
+*.utl
+*-settings.json
+BrowserData/
+last-save-folder.txt
+startup.log
+# The release ZIP and compressed test fixtures are intentionally tracked

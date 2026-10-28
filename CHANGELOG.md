@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.2.0
+
+- Added Cloaks with set, proc, minimum level-potential, and D/DR rating menus.
+- Added 41 cloak set IDs and standard proc choices, including Cloaked in Skill and damage reduction.
+- Added explicit conversion of supported legacy cloak rules into editable targets, preserving supported name filters and pack-space guards.
+- Corrected wearable slot requirements to the Decal-native EquipableSlots key and separated cloaks from underclothes.
+- Retained all original profile framing and opaque imported requirements.
+
 ## 1.1.0
 
 - Added Damage, Damage Resist, and Healing Boost rating controls alongside CD, CDR, and Max Health / Vitality.

@@ -2,7 +2,7 @@
 
 Easier to use UTL editor, with a local Windows x64 app and a browser edition.
 
-**[Download BroLoot 1.1 for Windows](https://github.com/ericallen9198-eng/BroLoot/raw/refs/heads/main/dist/downloads/BroLoot-Windows-x64.zip)**
+**[Download BroLoot 1.2 for Windows](https://github.com/ericallen9198-eng/BroLoot/raw/refs/heads/main/dist/downloads/BroLoot-Windows-x64.zip)**
 
 Extract the entire ZIP and run **BroLoot.exe**. Send the ZIP to other players. No account, sign-in, activation, or BroLoot website is needed to run the desktop app.
 
@@ -16,12 +16,26 @@ Edits save automatically on the current PC. **Save settings** is an optional JSO
 | --- | --- | --- |
 | Armor | Critical Damage (CD), Critical Damage Resist (CDR) | 2 |
 | Underclothes | Damage (D), Damage Resist (DR) | 3 |
+| Cloaks | Damage (D), Damage Resist (DR) | 3 |
 | Jewelry | Max Health / Vitality (V), Healing Boost (H) | 3 |
 | Trinkets | Max Health / Vitality (V), Healing Boost (H) | 3 |
 
 Each selected rating is an alternative minimum. Higher rolls qualify; these reference maxima do not impose an upper loot limit. **Extra server ratings** makes all six rating types available in each category and retains existing DreamWeave clothing CD/CDR settings. Set the minimum cantrip count to **0** to match ratings without requiring cantrips.
 
-Jewelry and trinkets have separate equipment-slot checks. Older files that treated jewelry broadly retain matching targets for trinkets when migrated.
+Jewelry, trinkets, cloaks, and underclothes have separate equipment-slot checks. Older files that treated jewelry broadly retain matching targets for trinkets when migrated.
+
+## Cloaks
+
+Cloaks have a dedicated category with:
+
+- **Set:** Any set or one of 41 cloak mastery sets, including War Magic, Void Magic, Summoning, combat, defense, crafting, and legacy weapon sets.
+- **Proc:** Any proc, damage reduction (standard -200), any spell proc, Cloaked in Skill, Shroud of Darkness (any defense), or a specific ring spell.
+- **Minimum level potential:** Any, or level 1–5 and higher. This checks the level the cloak can reach, rather than its current trained level, using the same icon overlays as the supplied profiles.
+- **Ratings:** Damage or Damage Resist minimums; higher rolls qualify.
+
+Set, proc, and level requirements must all match; selected ratings remain alternatives. Cloak proc matching does not require selecting ordinary cantrip tiers.
+
+Older imported cloak rules remain active until explicitly moved or disabled. Use **Move supported cloaks into controls** under Imported rules or from the Cloaks category. The converter preserves supported name filters and stricter pack-space requirements; unsupported conditions remain intact under Imported rules. Broad old rules may otherwise keep cloaks outside a new narrower target.
 
 ## Current capabilities
 
@@ -43,6 +57,16 @@ Exported strings use CRLF. Lengths count UTF-16 code units, including CRLF, as i
 Standard property IDs were cross-checked against ACE's PropertyInt enum: Damage 370, Damage Resist 371, CD 374, CDR 375, Healing Boost 376, Vitality/GearMaxHealth 379, MaterialType 131, ItemWorkmanship 105, EquipmentSetId 265, and ArmorLevel 28. Clothing-class armor is included with ArmorLevel >= 1; underclothes use ArmorLevel <= 0. These classifications need confirmation on DreamWeave.
 
 Reference: https://github.com/ACEmulator/ACE/blob/master/Source/ACE.Entity/Enum/Properties/PropertyInt.cs
+
+Cloak references:
+
+- Original samples: `(CL) Cloak (all)` and `(CL) Cloak (5)` use Clothing class and, for level 5, IconOverlay >= 27704.
+- [ACE EquipmentSet](https://github.com/ACEmulator/ACE/blob/master/Source/ACE.Entity/Enum/EquipmentSet.cs): cloak mastery set IDs.
+- [ACE cloak generation tables](https://github.com/ACEmulator/ACE/blob/master/Source/ACE.Server/Factories/Tables/CloakChance.cs): named proc spells.
+- [ACE appraisal](https://github.com/ACEmulator/ACE/blob/master/Source/ACE.Server/Network/Structure/AppraiseInfo.cs): proc spells are included in the appraised spellbook, permitting native VTClassic SpellMatch requirements.
+- [Decal value-key reference](https://github.com/mrvoorhe/redox-extensions/blob/master/RedoxLib/GameValues/IntValueKey.cs): EquipableSlots 218103822, IconOverlay 218103849, ArmorSetID 265, and CloakChanceType 352.
+
+Named procs use case-insensitive spell-name patterns. Shroud of Darkness intentionally groups all defense variants. Damage-reduction procs use CloakChanceType == 2; spell procs use == 1. The server determines the actual damage-reduction amount.
 
 ## Limits
 

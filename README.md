@@ -2,7 +2,7 @@
 
 Easier to use UTL editor, with a local Windows x64 app and a browser edition.
 
-**[Download BroLoot 1.2 for Windows](https://github.com/ericallen9198-eng/BroLoot/raw/refs/heads/main/dist/downloads/BroLoot-Windows-x64.zip)**
+**[Download BroLoot 1.3 for Windows](https://github.com/ericallen9198-eng/BroLoot/raw/refs/heads/main/dist/downloads/BroLoot-Windows-x64.zip)**
 
 Extract the entire ZIP and run **BroLoot.exe**. Send the ZIP to other players. No account, sign-in, activation, or BroLoot website is needed to run the desktop app.
 
@@ -70,7 +70,7 @@ Named procs use case-insensitive spell-name patterns. Shroud of Darkness intenti
 
 ## Limits
 
-Generated profiles from the previous version were confirmed working in-game. The new rating variants have passed format and behavior tests but have not yet been independently tested inside Virindi Tank. Browser visual QA is unavailable in this execution environment. Arbitrary legacy rules are displayed separately rather than guessed into equipment targets. Upper buffed-damage caps are not supported by the original requirement types and block export until removed. The Windows desktop app has been cross-compiled and package-checked here; its native GUI has not been launched in this Linux environment.
+Generated profiles from the previous version were confirmed working in-game. The new rating variants have passed format and behavior tests but have not yet been independently tested inside Virindi Tank. Browser flows were checked in Chromium, including the current 363-entry profile. Arbitrary legacy rules are displayed separately rather than guessed into equipment targets. Upper buffed-damage caps are not supported by the original requirement types and block export until removed. The Windows desktop app has been cross-compiled and package-checked here; its native GUI has not been launched in this Linux environment.
 
 No application server receives imported profile contents. Browser storage retains editor settings; BroLoot's own UTL export also includes an editor-state extension.
 
@@ -97,3 +97,13 @@ python desktop/build.py --sdk /path/to/dotnet/sdk/8.0.408 --deps /path/to/depend
 ```
 
 The dependency directory must contain extracted `microsoft.netframework.referenceassemblies.net48` version `1.0.3` and `microsoft.web.webview2` version `1.0.4314.35` packages. The builder emits `BroLoot-Windows-x64.zip` with the editor files and required SDK redistribution DLLs. Microsoft runtime licenses are included in the ZIP. The .NET build SDK and personal profiles/settings are excluded.
+
+## Existing rules and new DreamWeave items (1.3)
+
+Open your UTL, then select **All rules**. Existing rules retain their conditions and order. Enable or disable individual loot rules, selected rules, or a category. Disabled rules let later rules try the item; they do not exclude an item globally. Headings and editor metadata remain separate.
+
+Choose **Edit** to change existing values, actions, quantities, sets, materials, spell patterns/counts, essence thresholds, Aetheria level potential, or advanced parameters. Unfamiliar conditions retain their type and parameter order. The editor flags recognizable earlier broad rules; this is not a complete overlap analysis of generated targets or arbitrary server logic. The global pack reserve still applies and preserves stricter imported requirements.
+
+Use **+ Add DreamWeave item** or duplicate a similar rule. New items start disabled. Set an exact item name (special characters are escaped automatically), or use Advanced conditions for a name pattern, item template ID, and additional requirements. DreamWeave items use Keep all or Keep quantity and respect the DreamWeave master switch.
+
+**Undo rule change** retains up to 30 rule-edit snapshots during the session. **Reset to imported values** preserves the original entry across settings/UTL saves. Opening or starting a profile first saves one recovery snapshot locally; **Restore previous profile** swaps it with the current profile. Save settings remains the portable backup. Numeric ranges and recognizable malformed patterns are checked before export; .NET-only regular expressions retain their original syntax and require in-game verification.

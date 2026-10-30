@@ -23,7 +23,7 @@ function clone(r){let out=JSON.parse(JSON.stringify(r));delete out.raw;return ou
 function disabled(r){return r.requirements.some(q=>q.type===9999&&parts(q)[0]==='true')}
 function withPackspace(r,reserve){r=clone(r);if(r.action===0||disabled(r))return r;const required=integer(reserve,'free pack-space reserve',0,1000)+1;let original=0;r.requirements=r.requirements.filter(q=>{if(q.type!==1001)return true;original=Math.max(original,integer(parts(q)[0],'pack-space requirement',0,2147483647));return false});r.requirements.push(req(1001,Math.max(original,required)));return r}
 function unbrandedName(name){return name.replace(/^\[(?:NoobLoot|BroLoot)\]\s*(?:Server:\s*)?/,'')}
-function enabledRule(r,on){r=clone(r);r.name=unbrandedName(r.name);if(!on&&!disabled(r))r.requirements.push(req(9999,'true'));return r}
+function enabledRule(r,on){r=clone(r);r.name=unbrandedName(r.name);if(on)r.requirements=r.requirements.filter(q=>q.type!==9999);if(!on&&!disabled(r))r.requirements.push(req(9999,'true'));return r}
 function escapeRegex(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
 const SETS={Adept:14,Defender:16,Dexterous:20,Hearty:19,Dedication:30,'Flame Proof':26,'Acid Proof':27,'Cold Proof':28,'Lightning Proof':29};
 const CATEGORIES=['Armor','Underclothes','Jewelry','Trinkets','Cloaks'];

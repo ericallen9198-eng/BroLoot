@@ -1,3 +1,11 @@
+## 1.3
+
+- All Rules: edit existing condition values, enable formerly disabled loot rules, category/selected toggles, readable labels, set/material/level choices, and advanced parameters.
+- Add or duplicate DreamWeave items, exact-name matching, template-ID conditions, and keep quantities.
+- Rule summaries, earlier broad-rule notices, undo, persistent per-rule reset, automatic profile replacement backup, and export validation.
+- Quest section grouping, essence and Aetheria condition controls. Headings/metadata remain separate.
+- Windows package rebuilt; existing and new rule suites pass. Chromium import/edit/export checks cover the current 363-entry profile. Windows native GUI and changed filters still need in-game verification.
+
 # Changelog
 
 ## 1.2.0

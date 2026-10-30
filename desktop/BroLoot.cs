@@ -14,8 +14,8 @@ using Microsoft.Web.WebView2.WinForms;
 [assembly: AssemblyDescription("Offline Windows loot profile editor")]
 [assembly: AssemblyCompany("BroLoot")]
 [assembly: AssemblyProduct("BroLoot")]
-[assembly: AssemblyVersion("1.2.0.0")]
-[assembly: AssemblyFileVersion("1.2.0.0")]
+[assembly: AssemblyVersion("1.3.0.0")]
+[assembly: AssemblyFileVersion("1.3.0.0")]
 
 internal static class Program
 {

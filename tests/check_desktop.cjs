@@ -3,7 +3,7 @@ const fs=require('fs'),assert=require('assert'),vm=require('vm');
 const root=(DIST+'');let receive,posted=[],html='',messages={};
 const nodes={targetSummary:{},targetWarning:{},noSpellResults:{},weaponEmpty:{},messageDialog:{showModal(){}},messageTitle:{},messageBody:{}};
 const ctx={UTL:require(root+'utl.js'),structuredClone,console,chrome:{webview:{addEventListener:(name,fn)=>receive=fn,postMessage:s=>posted.push(JSON.parse(s))}},localStorage:{getItem:()=>null,setItem(){}},document:{querySelectorAll:()=>[],getElementById:k=>k==='main'?{set innerHTML(s){html=s}}:nodes[k]},confirm:()=>true,alert(){}};vm.createContext(ctx);
-for(const file of ['data.js','utl-data.js','desktop-bridge.js','io.js','app.js'])vm.runInContext(fs.readFileSync(root+file,'utf8'),ctx);
+for(const file of ['data.js','utl-data.js','desktop-bridge.js','io.js','weapon-targets.js','app.js'])vm.runInContext(fs.readFileSync(root+file,'utf8'),ctx);
 const run=s=>vm.runInContext(s,ctx);
 (async()=>{
  assert(ctx.brolootDesktop);run("tab='Profile';render()");assert(!html.includes('download-app'));

@@ -1,0 +1,88 @@
+{
+  "sourceCommit": "4a228c1149f39ef06e9cb2ca0f4750f944204613",
+  "source": "leo-duran/virindi-public-clone/trunk/VirindiTankLootPlugins/VTClassic/VTClassic/ComputedItemInfo.cs",
+  "method": "GetBuffedDoubleValueKey; native BuffedDoubleValKeyGE float comparison",
+  "cases": [
+    {
+      "name": "Legendary defender 19+9",
+      "key": 29,
+      "innate": 19,
+      "spell": 6091,
+      "threshold": 26,
+      "actual": 1.28,
+      "passes": true
+    },
+    {
+      "name": "Epic defender at exact boundary",
+      "key": 29,
+      "innate": 19,
+      "spell": 4663,
+      "threshold": 26,
+      "actual": 1.26,
+      "passes": true
+    },
+    {
+      "name": "Major defender below minimum",
+      "key": 29,
+      "innate": 19,
+      "spell": 2588,
+      "threshold": 26,
+      "actual": 1.24,
+      "passes": false
+    },
+    {
+      "name": "Changed defense minimum 28",
+      "key": 29,
+      "innate": 19,
+      "spell": 6091,
+      "threshold": 28,
+      "actual": 1.28,
+      "passes": true
+    },
+    {
+      "name": "Changed defense minimum 24",
+      "key": 29,
+      "innate": 19,
+      "spell": 2588,
+      "threshold": 24,
+      "actual": 1.24,
+      "passes": true
+    },
+    {
+      "name": "Legendary heart thirst 16+9",
+      "key": 167772172,
+      "innate": 16,
+      "spell": 6094,
+      "threshold": 25,
+      "actual": 1.25,
+      "passes": true
+    },
+    {
+      "name": "Epic heart thirst below minimum",
+      "key": 167772172,
+      "innate": 17,
+      "spell": 4666,
+      "threshold": 25,
+      "actual": 1.24,
+      "passes": false
+    },
+    {
+      "name": "Innate only",
+      "key": 29,
+      "innate": 28,
+      "spell": 0,
+      "threshold": 26,
+      "actual": 1.28,
+      "passes": true
+    },
+    {
+      "name": "No assumed character buff",
+      "key": 29,
+      "innate": 19,
+      "spell": 4400,
+      "threshold": 26,
+      "actual": 1.19,
+      "passes": false
+    }
+  ]
+}

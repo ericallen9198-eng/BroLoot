@@ -5,7 +5,7 @@ for(const dir of fs.readdirSync('attachments'))for(const file of fs.readdirSync(
 assert.equal(docs.reduce((n,d)=>n+d.d.rules.length,0),1927);
 const root=(DIST+'');let html='',alerts=[],stash={};const nodes={targetSummary:{},targetWarning:{},noSpellResults:{},weaponEmpty:{}};
 const ctx={UTL:U,structuredClone,console,confirm:()=>true,alert:x=>alerts.push(x),localStorage:{getItem:k=>stash[k]||null,setItem:(k,v)=>stash[k]=v},document:{querySelectorAll:()=>[],getElementById:k=>k==='main'?{set innerHTML(s){html=s}}:nodes[k]},setTimeout};vm.createContext(ctx);
-for(const name of ['data.js','utl-data.js','io.js','app.js'])vm.runInContext(fs.readFileSync(root+name,'utf8'),ctx);
+for(const name of ['data.js','utl-data.js','io.js','weapon-targets.js','app.js'])vm.runInContext(fs.readFileSync(root+name,'utf8'),ctx);
 const run=code=>vm.runInContext(code,ctx);
 // Generated export is framed correctly and can restore the entire editor state.
 let built=run('buildProfile()');assert.equal(U.parse(built.text).rules.length,built.doc.rules.length);assert.equal(U.readSettings(U.parse(built.text)).reserve,5);assert.equal(run('state.serverItems.length'),45);

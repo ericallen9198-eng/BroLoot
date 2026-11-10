@@ -1,3 +1,10 @@
+## 1.4
+
+- Editable buffed melee-defense and attack-bonus weapon minimums; defensive and accurate target creation with 26% / 25% starting values.
+- Independent damage minimum per target, duplicate/remove controls, bulk bonus minimum changes, and settings/UTL persistence.
+- Supported original weapon conversion preserves actual damage, wield conditions and pack-space requirements; warns about active older weapon rules.
+- Native-calculator fixtures verify Legendary/Epic/Major cantrips, exact boundaries, and no assumed character buffs.
+
 ## 1.3
 
 - All Rules: edit existing condition values, enable formerly disabled loot rules, category/selected toggles, readable labels, set/material/level choices, and advanced parameters.

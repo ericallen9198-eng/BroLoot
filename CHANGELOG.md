@@ -1,3 +1,9 @@
+## 1.4.1
+
+- Add enabled Keep all defaults for Fiber (WCID 1007000) and Legendary Key name variants, including miscellaneous Shattered keys.
+- Migrate existing profiles without replacing original rules; preserve later per-item disabling and quantities.
+- Keep the DreamWeave master switch and pack-space reserve in effect.
+
 ## 1.4
 
 - Editable buffed melee-defense and attack-bonus weapon minimums; defensive and accurate target creation with 26% / 25% starting values.

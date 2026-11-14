@@ -1,0 +1,14 @@
+{
+  "name": "LootSnob V4",
+  "author": "Immortalbob",
+  "role": "Long-standing community reference profile",
+  "original_post": "https://immortalbob.com/phpBB3/viewtopic.php?p=3",
+  "original_download": "https://immortalbob.com/phpBB3/download/file.php?id=60",
+  "retrieved_from": "https://github.com/Raajik/ruleforge/blob/64388e9dad8a07a47b693148b9e9ce3740c1cf0e/fixtures/LootSnobV4.utl",
+  "retrieved_on": "2026-11-14",
+  "mirror_git_blob_sha1": "45bf5b839740f930c7767258f44b4b646fb84174",
+  "sha256": "7ca4b76cbd261893481a9f024a457e369571c909699dd9db6f83c9ca1db112ab",
+  "bytes": 402919,
+  "rule_count": 1627,
+  "preservation": "Unmodified mirror bytes, including original line endings and disabled states."
+}

@@ -126,3 +126,7 @@ New and existing profiles receive two enabled **Keep all** defaults under **Drea
 - **Legendary Keys (all forms)** matches Legendary and Key as whole words, ending in Key/Keys with an optional parenthetical suffix. This covers Durable, Aged, Shattered, and other prefixes without restricting WCID, level requirement, uses remaining, or item class. The class restriction is deliberately omitted because [Shattered Legendary Key is a generic miscellaneous item in the reference data](https://github.com/ACEmulator/ACE-World-16PY-Patches/blob/f5edf9b95b98fd63ebed901f6691effcf486ecba/Database/Patches/9%20WeenieDefaults/Generic/Misc/48908%20Shattered%20Legendary%20Key.sql). Unrelated names such as Legendary Key Necklace are rejected.
 
 Each default remains configurable; disabled status and keep quantity survive reopening settings or BroLoot exports. The DreamWeave master switch and global pack-space reserve still apply. A reserve of 5 requires at least 6 free main-pack spaces before pickup. Export the edited UTL and reload it in your looter to activate the changes; updating the editor alone does not replace the game's active profile.
+
+## Community reference profiles
+
+[Immortalbob’s LootSnob V4](examples/community/README.md) is saved unchanged as a long-standing community compatibility example, with source attribution, a pinned mirror revision, checksum, and regression checks for its original modifier rules.

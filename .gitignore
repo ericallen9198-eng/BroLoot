@@ -20,3 +20,6 @@ BrowserData/
 last-save-folder.txt
 startup.log
 # The release ZIP and compressed test fixtures are intentionally tracked
+
+# Curated, attributed community references are intentionally tracked
+!examples/community/*.utl
